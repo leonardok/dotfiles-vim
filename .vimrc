@@ -29,6 +29,7 @@ Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Shougo/neocomplcache'
+Bundle 'scrooloose/nerdtree'
 
 filetype plugin indent on     " required!
 
