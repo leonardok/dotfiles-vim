@@ -29,6 +29,8 @@ Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Shougo/neocomplcache'
+Bundle 'scrooloose/nerdtree'
+Bundle 'chazy/cscope_maps'
 
 filetype plugin indent on     " required!
 
@@ -61,6 +63,9 @@ set noexpandtab
 set tabstop=8
 set shiftwidth=8
 
+set list
+set listchars=tab:→\ ,trail:.,extends:#,nbsp:.
+
 
 " Highlight extra white spaces
 " Those lines to:
@@ -75,24 +80,29 @@ set shiftwidth=8
 " au InsertLeave * redraw!
 
 " This are to move the divisions around for split sessions
-map <silent> ] <C-W>+
-map <silent> [ <C-W>-
-map <silent> } <C-W>>
-map <silent> { <C-W><
-map <silent> <C-J> <C-W>j<C-W>_
-map <silent> <C-K> <C-W>k<C-W>_
+noremap <silent> ] <C-W>++
+noremap <silent> [ <C-W>-
+noremap <silent> } <C-W>>
+noremap <silent> { <C-W><
+noremap <silent> <C-J> <C-W>j<C-W>_
+noremap <silent> <C-K> <C-W>k<C-W>_
+
 set wmh=0			" sets the minimum window height to 0
 
+" NERDTree configuration
 au VimEnter * NERDTree
-au VimEnter * wincmd p
+au VimEnter * NERDTreeToggle
+
+noremap <silent> <F10> :NERDTreeToggle<CR>
 
 
 " To replace spaces with tabs :set noet|retab!
 " Following commands are to set filetype specifics like ruby files to be
 " indented with tabs of 2 spaces.
-" au BufNewFile,BufRead *.rb    set filetype=ruby
-au BufNewFile,BufRead *.js.rb set filetype=js
-au BufNewFile,BufRead *.less  set filetype=less
+au BufNewFile,BufRead *.rb set filetype=ruby
+au BufNewFile,BufRead *.js,*.js.rb,*.js.erb set filetype=javascript noexpandtab shiftwidth=4 tabstop=4
+au BufNewFile,BufRead *.less set filetype=less noexpandtab shiftwidth=4 tabstop=4
+au BufNewFile,BufRead *.haml set filetype=haml noexpandtab shiftwidth=4 tabstop=4
 
 " Enable omni completion.
 au FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -107,3 +117,7 @@ au FileType ruby let g:rubycomplete_classes_in_global=1
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+
+" Rewrite bg color for the set list
+hi SpecialKey ctermbg=234
+
