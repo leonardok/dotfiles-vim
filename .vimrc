@@ -102,7 +102,8 @@ noremap <silent> <F10> :NERDTreeToggle<CR>
 au BufNewFile,BufRead *.rb set filetype=ruby
 au BufNewFile,BufRead *.js,*.js.rb,*.js.erb set filetype=javascript noexpandtab shiftwidth=4 tabstop=4
 au BufNewFile,BufRead *.less set filetype=less noexpandtab shiftwidth=4 tabstop=4
-au BufNewFile,BufRead *.haml set filetype=haml noexpandtab shiftwidth=4 tabstop=4
+au BufNewFile,BufRead *.haml set filetype=haml expandtab shiftwidth=2 tabstop=2
+au BufNewFile,BufRead *.py,*.pm set filetype=python expandtab shiftwidth=4 tabstop=4
 
 " Enable omni completion.
 au FileType css setlocal omnifunc=csscomplete#CompleteCSS
