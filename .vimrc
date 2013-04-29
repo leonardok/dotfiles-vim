@@ -119,6 +119,8 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
+let g:NERDTreeDirArrows=0
+
 " Rewrite bg color for the set list
 hi SpecialKey ctermbg=234
 
