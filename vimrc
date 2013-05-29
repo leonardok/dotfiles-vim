@@ -31,6 +31,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Shougo/neocomplcache'
 Bundle 'scrooloose/nerdtree'
 Bundle 'chazy/cscope_maps'
+Bundle 'msanders/snipmate.vim'
+Bundle 'nvie/vim-flake8'
 
 filetype plugin indent on     " required!
 
@@ -45,7 +47,6 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_max_list = 5			" Maximum displayed items
 
-let g:Powerline_colorscheme = 'skwp'
 
 " Shell like behavior(not recommended) (but I like it!).
 set completeopt+=longest
@@ -54,6 +55,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<TAB>"
 
 " custom vimrc configuration here
 set t_Co=256
+set encoding=utf-8
 
 set hlsearch " Highlight searches
 set number   " show line numbers
@@ -113,14 +115,22 @@ au FileType ruby set omnifunc=rubycomplete#Complete
 au FileType ruby let g:rubycomplete_buffer_loading=1
 au FileType ruby let g:rubycomplete_classes_in_global=1
 
+" Set Flake8 to run when save
+autocmd BufWritePost *.py call Flake8()
 
 " use solarized by default
-set background=dark
+set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
+
+" let g:Powerline_colorscheme = 'skwp'
+" let g:Powerline_theme='short'
+" let g:Powerline_colorscheme='solarized256_dark'
+" let g:Powerline_symbols = 'fancy'
 
 let g:NERDTreeDirArrows=0
 
 " Rewrite bg color for the set list
 hi SpecialKey ctermbg=234
 
+set nolist
