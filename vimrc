@@ -27,7 +27,7 @@ Bundle 'gmarik/vundle'
 " PUT BUNDLES HERE
 "
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Lokaltog/vim-powerline'
 Bundle 'Shougo/neocomplcache'
 Bundle 'scrooloose/nerdtree'
 Bundle 'chazy/cscope_maps'
@@ -47,6 +47,7 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_max_list = 5			" Maximum displayed items
 
+" let g:Powerline_colorscheme = 'skwp'
 
 " Shell like behavior(not recommended) (but I like it!).
 set completeopt+=longest
@@ -101,7 +102,7 @@ noremap <silent> <F10> :NERDTreeToggle<CR>
 " To replace spaces with tabs :set noet|retab!
 " Following commands are to set filetype specifics like ruby files to be
 " indented with tabs of 2 spaces.
-au BufNewFile,BufRead *.rb set filetype=ruby
+au BufNewFile,BufRead *.rb set filetype=ruby expandtab shiftwidth=4 tabstop=4
 au BufNewFile,BufRead *.js,*.js.rb,*.js.erb set filetype=javascript noexpandtab shiftwidth=4 tabstop=4
 au BufNewFile,BufRead *.less set filetype=less noexpandtab shiftwidth=4 tabstop=4
 au BufNewFile,BufRead *.haml set filetype=haml expandtab shiftwidth=2 tabstop=2
@@ -118,6 +119,10 @@ au FileType ruby let g:rubycomplete_classes_in_global=1
 " Set Flake8 to run when save
 autocmd BufWritePost *.py call Flake8()
 
+" Set Flake8 to run when save
+" autocmd BufWritePost *.py call Flake8()
+
+
 " use solarized by default
 set background=light
 let g:solarized_termcolors=256
@@ -132,5 +137,7 @@ let g:NERDTreeDirArrows=0
 
 " Rewrite bg color for the set list
 hi SpecialKey ctermbg=234
+set nolist
+set encoding=utf-8
 
 set nolist
