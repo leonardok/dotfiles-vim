@@ -120,7 +120,9 @@ au FileType ruby let g:rubycomplete_classes_in_global=1
 autocmd BufWritePost *.py call Flake8()
 
 " Set Flake8 to run when save
-" autocmd BufWritePost *.py call Flake8()
+autocmd BufWritePost *.py call Flake8()
+let g:flake8_ignore="E501,W391"
+let g:flake8_max_complexity=10
 
 
 " use solarized by default
@@ -139,5 +141,3 @@ let g:NERDTreeDirArrows=0
 hi SpecialKey ctermbg=234
 set nolist
 set encoding=utf-8
-
-set nolist
