@@ -116,8 +116,6 @@ au FileType ruby set omnifunc=rubycomplete#Complete
 au FileType ruby let g:rubycomplete_buffer_loading=1
 au FileType ruby let g:rubycomplete_classes_in_global=1
 
-" Set Flake8 to run when save
-autocmd BufWritePost *.py call Flake8()
 
 " Set Flake8 to run when save
 autocmd BufWritePost *.py call Flake8()
@@ -136,6 +134,7 @@ colorscheme solarized
 " let g:Powerline_symbols = 'fancy'
 
 let g:NERDTreeDirArrows=0
+let NERDTreeIgnore = ['\.pyc$']
 
 " Rewrite bg color for the set list
 hi SpecialKey ctermbg=234
