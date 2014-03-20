@@ -90,6 +90,11 @@ noremap <silent> { <C-W><
 noremap <silent> <C-J> <C-W>j<C-W>_
 noremap <silent> <C-K> <C-W>k<C-W>_
 
+autocmd BufRead *.py nnoremap <buffer> K :<C-u>let save_isk = &iskeyword \|
+    \ set iskeyword+=. \|
+    \ execute "!pydoc " . expand("<cword>") \|
+    \ let &iskeyword = save_isk<CR>
+
 set wmh=0			" sets the minimum window height to 0
 
 " NERDTree configuration
