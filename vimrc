@@ -101,7 +101,7 @@ set wmh=0			" sets the minimum window height to 0
 au VimEnter * NERDTree
 au VimEnter * NERDTreeToggle
 
-noremap <silent> <F10> :NERDTreeToggle<CR>
+noremap <silent> <F9> :NERDTreeToggle<CR>
 
 
 " To replace spaces with tabs :set noet|retab!
